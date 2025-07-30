@@ -20,7 +20,7 @@ File Uploads: Multer
 ## Installation and Setup
 
 ### 1. Clone the Repository
-git clone https://github.com/your-username/docsphere.git  
+git clone https://github.com/vinitisittu/docsphere.git  
 cd docsphere
 
 ### 2. Install Backend Dependencies
