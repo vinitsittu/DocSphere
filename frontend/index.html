@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>DocSphere</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      background: #f4f4f4;
+      color: #333;
+    }
+    /* Header */
+    .main-header {
+      background: white;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 12px 0;
+    }
+    .header-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .logo img {
+      height: 40px;
+      margin-right: 8px;
+    }
+    .logo span {
+      font-size: 22px;
+      font-weight: bold;
+      color: orange;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      margin-left: 25px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: orange;
+    }
+
+    /* Hero */
+    .hero {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+    .cta-buttons {
+      margin-top: 20px;
+    }
+    .btn {
+      padding: 12px 24px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin: 8px;
+      text-decoration: none;
+    }
+    .primary {
+      background: #ff7b00;
+      color: white;
+    }
+    .secondary {
+      background: white;
+      color: #ff7b00;
+      border: 2px solid #ff7b00;
+    }
+
+    /* Features */
+    .features {
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .features-grid {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .feature-item {
+      width: 250px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    .feature-item img {
+      width: 50px;
+      margin-bottom: 10px;
+    }
+
+    /* Steps */
+    .how-it-works {
+      background: #fff;
+      padding: 50px 20px;
+      text-align: center;
+    }
+    .steps {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+    .step {
+      background: #ff922c;
+      color: white;
+      padding: 20px;
+      border-radius: 15px;
+      width: 180px;
+      font-size: 1rem;
+    }
+
+    /* Footer */
+    .footer {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="main-header">
+    <div class="header-container">
+      <a href="index.html" class="logo">
+        <img src="./images/docsphere.png" alt="DocSphere Logo" />
+        <span>DocSphere</span>
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="pages/about.html">About</a>
+        <a href="pages/contact.html">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <header class="hero">
+    <h1>Your Documents, Anytime, Anywhere.</h1>
+    <p>Store, organize, and access all your important documents securely.</p>
+    <div id="auth-buttons" class="cta-buttons"></div>
+  </header>
+
+  <!-- Features -->
+  <section class="features">
+    <h2>Why Choose DocSphere?</h2>
+    <div class="features-grid">
+      <div class="feature-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" />
+        <h3>Secure & Encrypted</h3>
+        <p>Your documents are protected with industry-standard encryption.</p>
+      </div>
+      <div class="feature-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/992/992700.png" />
+        <h3>Access Anytime</h3>
+        <p>Retrieve your files from anywhere in the world.</p>
+      </div>
+      <div class="feature-item">
+        <img src="https://cdn-icons-png.flaticon.com/512/1828/1828884.png" />
+        <h3>Organized Storage</h3>
+        <p>Sort your documents into categories like Health, Education, and Wealth.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section class="how-it-works">
+    <h2>How It Works?</h2>
+    <div class="steps">
+      <div class="step"><p>Sign up & create your secure vault.</p></div>
+      <div class="step"><p>Upload & categorize your important documents.</p></div>
+      <div class="step"><p>Access securely from anywhere, anytime.</p></div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2024 DocSphere. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    function logout() {
+      localStorage.removeItem("token");
+      window.location.href = "index.html";
+    }
+    const authDiv = document.getElementById("auth-buttons");
+    const token = localStorage.getItem("token");
+
+    if (token) {
+      authDiv.innerHTML = `
+        <a class="btn primary" href="pages/dashboard.html">Go to Dashboard</a>
+        <button class="btn secondary" onclick="logout()">Logout</button>
+      `;
+    } else {
+      authDiv.innerHTML = `
+        <a class="btn primary" href="pages/register.html">Sign Up for Free</a>
+        <a class="btn secondary" href="pages/login.html">Login</a>
+      `;
+    }
+  </script>
+
+</body>
+</html>

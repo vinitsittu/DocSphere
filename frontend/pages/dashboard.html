@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dashboard - DocuVault</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f5f6fa;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .dashboard-container {
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .dashboard-container h2 {
+      margin-bottom: 15px;
+      text-align: center;
+      color: #333;
+    }
+
+    .actions {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+      gap: 10px;
+    }
+
+    .actions input {
+      flex: 1;
+      min-width: 200px;
+      padding: 10px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+
+    .btn {
+      padding: 10px 18px;
+      font-size: 0.95rem;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .btn.upload {
+      background: #ff7b00;
+      color: white;
+    }
+
+    .btn.logout {
+      background: #333;
+      color: white;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background: #6a11cb;
+      color: white;
+    }
+
+    tr:nth-child(even) {
+      background: #f9f9f9;
+    }
+
+    .action-buttons button {
+      margin: 2px;
+      padding: 5px 10px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 0.85rem;
+    }
+
+    .btn-download {
+      background: #28a745;
+      color: white;
+    }
+
+    .btn-delete {
+      background: #dc3545;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>📂 DocuVault Dashboard</h1>
+    <p>Manage your documents securely</p>
+  </header>
+
+  <div class="dashboard-container">
+    <h2>My Documents</h2>
+
+    <div class="actions">
+      <input type="text" id="search" placeholder="Search documents..." />
+      <button class="btn upload" onclick="window.location='upload.html'">Upload New</button>
+      <button class="btn logout" onclick="logout()">Logout</button>
+    </div>
+
+    <table id="docsTable">
+      <thead>
+        <tr>
+          <th>File Name</th>
+          <th>Size</th>
+          <th>Uploaded</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Documents will be loaded here -->
+      </tbody>
+    </table>
+  </div>
+
+  <script src="../js/dashboard.js"></script>
+</body>
+</html>

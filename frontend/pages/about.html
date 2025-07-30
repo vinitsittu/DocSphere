@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About - DocSphere</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f4f4f4;
+    }
+
+    /* ✅ Header Styles */
+    .main-header {
+      background: white;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      padding: 12px 0;
+    }
+    .header-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .logo img {
+      height: 40px;
+      margin-right: 8px;
+    }
+    .logo span {
+      font-size: 22px;
+      font-weight: bold;
+      color: orange;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      margin-left: 25px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {
+      color: orange;
+    }
+
+    /* ✅ Page Layout */
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+    h2 {
+      font-size: 28px;
+      border-bottom: 2px solid #ccc;
+      padding-bottom: 5px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      margin-top: 20px;
+    }
+    .grid div {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    iframe {
+      width: 100%;
+      height: 250px;
+      border: 0;
+      border-radius: 10px;
+    }
+
+    /* ✅ Accordion */
+    .accordion {
+      margin-top: 30px;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    .accordion button {
+      width: 100%;
+      text-align: left;
+      padding: 12px;
+      font-size: 18px;
+      font-weight: 600;
+      border: none;
+      background: none;
+      cursor: pointer;
+      outline: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .accordion button:hover {
+      color: #2575fc;
+    }
+    .accordion-content {
+      display: none;
+      padding: 10px;
+      color: #444;
+    }
+    .accordion button.active + .accordion-content {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Header -->
+  
+
+  <!-- ✅ Page Content -->
+  <div class="container">
+    <h2>About DocSphere</h2>
+
+    <div class="grid">
+      <!-- Left Section -->
+      <div>
+        <h3>Who We Are</h3>
+        <p>
+          <strong>DocSphere</strong> specializes in seamless document management,
+          allowing users to efficiently store, access, and organize files in a
+          centralized, user-friendly system. Our intuitive platform ensures
+          security, collaboration, and efficiency in handling essential documents.
+        </p>
+      </div>
+
+      <!-- Right Section (Map) -->
+      <div>
+        <h3>Our Location</h3>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3839.110252763728!2d78.07578827581816!3d15.798139484842727!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bb5dd11dfa5a599%3A0x9b5eac90634a9e00!2sG.Pullaiah%20College%20of%20Engineering%20and%20Technology%2C%20Kurnool%20GPCET!5e0!3m2!1sen!2sin!4v1740165304384!5m2!1sen!2sin"
+          loading="lazy"
+        ></iframe>
+        <p>
+          <strong>Located in Kurnool – G Pullaiah College</strong><br />
+          Nandikotkur Rd, Pasupula Village, Kurnool, AP 518002<br />
+          📞 08518285011 <br />
+          🌐 <a href="https://www.docsphere.com" style="color: blue;">www.docsphere.com</a>
+        </p>
+      </div>
+    </div>
+
+    <!-- ✅ Accordion -->
+    <div class="accordion">
+      <button>Our Company Mission <span>+</span></button>
+      <div class="accordion-content">
+        Our mission is to redefine document management with smart, secure, and scalable solutions.
+      </div>
+
+      <button>Our Vision <span>+</span></button>
+      <div class="accordion-content">
+        We envision a future where businesses manage documents effortlessly with automation and AI-driven insights.
+      </div>
+
+      <button>Quality Assurance <span>+</span></button>
+      <div class="accordion-content">
+        We uphold high standards to ensure seamless, secure, and intuitive document management for businesses worldwide.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelectorAll(".accordion button").forEach((btn) => {
+      btn.addEventListener("click", () => {
+        btn.classList.toggle("active");
+        btn.querySelector("span").textContent =
+          btn.classList.contains("active") ? "-" : "+";
+      });
+    });
+  </script>
+</body>
+</html>

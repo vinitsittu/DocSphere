@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Upload - DocuVault</title>
+  <style>
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #f4f7fc;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* ✅ Header Styling */
+    header {
+      background: white;
+      padding: 15px 0;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .header-container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 0 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+    .logo img {
+      height: 40px;
+      margin-right: 8px;
+    }
+    .logo span {
+      font-size: 22px;
+      font-weight: bold;
+      color: orange;
+    }
+    nav a {
+      text-decoration: none;
+      margin-left: 20px;
+      color: #333;
+      font-weight: 500;
+    }
+    nav a:hover {
+      color: orange;
+    }
+
+    /* ✅ Page Container */
+    .container {
+      max-width: 500px;
+      margin: 60px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    input[type="file"] {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      background: #2575fc;
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .btn:hover {
+      background: #1a5edc;
+    }
+
+    #msg {
+      margin-top: 12px;
+      font-weight: 500;
+    }
+
+    .back-link {
+      display: inline-block;
+      margin-top: 15px;
+      text-decoration: none;
+      color: #2575fc;
+      font-weight: 500;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ Header -->
+  <header>
+    <div class="header-container">
+      <a href="../index.html" class="logo">
+        <img src="../images/docsphere.png" alt="Logo">
+        <span>DocSphere</span>
+      </a>
+      <nav>
+        <a href="../pages/dashboard.html">Dashboard</a>
+        <a href="../pages/upload.html">Upload</a>
+        <button id="logoutBtn" style="
+  background: none;
+  border: none;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 16px;">
+  Logout
+</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ✅ Upload Section -->
+  <div class="container">
+    <h2>📤 Upload a Document</h2>
+    <form id="uploadForm">
+      <input type="file" id="file" required><br>
+      <button type="submit" class="btn">Upload</button>
+    </form>
+    <p id="msg"></p>
+    <a href="dashboard.html" class="back-link">⬅ Back to Dashboard</a>
+  </div>
+
+  <script src="../js/upload.js"></script>
+</body>
+</html>
